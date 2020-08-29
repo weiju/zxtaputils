@@ -80,6 +80,15 @@ def next_line(infile, autostart, progoffset):
 PLUS3DOS_ISSUE   = 0x01
 PLUS3DOS_VERSION = 0x00
 
+
+def compute_checksum2(bytearr):
+    """checksum computed differently than on TAP files"""
+    csum = 0
+    for b in bytearr:
+        csum += b
+    return csum % 256
+
+
 class Plus3DOSHeader:
     """Representation of a +3DOS header"""
 
@@ -107,7 +116,7 @@ class Plus3DOSHeader:
 
         outbytes += self.param_bytes()
         outbytes += bytearray(105)  # actually one more
-        checksum = compute_checksum(outbytes)
+        checksum = compute_checksum2(outbytes)
         outbytes += bytes([checksum])
         outfile.write(outbytes)
 
