@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import argparse
+import struct
+import traceback
+
+from zxtaputils import tap2basic, bas2asc
+
+"""
+tap2bas - Extract BASIC source code from a TAP file block
+"""
+
+DESCRIPTION = "tap2bas - Read BASIC code from TAP file block"
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     description=DESCRIPTION)
+    parser.add_argument('infile', help="input file")
+    parser.add_argument('--blocknum', type=int, default=0, help="Block number")
+    parser.add_argument('--informat', default="tap", help="input format", choices=['tap', '+3dos'])
+    parser.add_argument('--outformat', default="source", help="output format", choices=['source', 'tokens'])
+    parser.add_argument('--outfile', default=None, help="output file")
+    args = parser.parse_args()
+    if args.informat == '+3dos':
+        bas2asc.bas2asc(args)
+    else:
+        tap2basic.tap2basic(args)

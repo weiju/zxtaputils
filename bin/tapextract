@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import argparse
+import struct
+import traceback
+
+from zxtaputils import tapextract
+
+"""
+tapextract - Extract the binary data from a TAP file
+"""
+
+DESCRIPTION = "tapextract - TAP file extractor"
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     description=DESCRIPTION)
+    parser.add_argument('tapfile', help="input file")
+    parser.add_argument('--blocknum', type=int, default=0, help="Block number")
+    parser.add_argument('outfile', help="output file")
+    args = parser.parse_args()
+    tapextract.tapextract(args)

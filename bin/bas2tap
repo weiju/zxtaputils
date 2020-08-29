@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import argparse
+from zxtaputils import bas2tokens
+
+"""
+bas2tap - Tokenize a BASIC text file and store it in a TAP file
+"""
+
+DESCRIPTION = "bas2tap - Tokenize ZX Spectrum (Next) BASIC source file"
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     description=DESCRIPTION)
+    parser.add_argument('infile', help="input file")
+    parser.add_argument('outfile', help="output file")
+    parser.add_argument('--autostart', help="autostart line", type=int, default=32768)
+    parser.add_argument('--format', help="output format", choices=['tap', '+3dos', 'plain'], default='tap')
+    args = parser.parse_args()
+    bas2tokens.bas2tap(args)
+    print("Done.")

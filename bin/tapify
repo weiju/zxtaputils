@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import argparse
+from zxtaputils import tapify
+
+"""
+tapify.py - Put the specified file into a TAP file
+"""
+
+DESCRIPTION = "tapify - Place input file into a TAP file"
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     description=DESCRIPTION)
+    parser.add_argument("infile", help="input file")
+    parser.add_argument("outfile", help="output file")
+    parser.add_argument("--objtype", help="object type", choices=['program', 'code', 'nums', 'chars'], default='code')
+    parser.add_argument("--filename", help="internal file name", default='')
+    parser.add_argument("--startaddr", help="start address (for binary code)", type=int, default=0x4000)
+    parser.add_argument("--varname", help="variable name (for array data)", default='a')
+    parser.add_argument("--autostart_line", help="start line (for tokenized BASIC program)",
+                        type=int, default=32768)
+    args = parser.parse_args()
+
+    tapify.tapify(args)

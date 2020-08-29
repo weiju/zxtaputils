@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import argparse
+from zxtaputils import tapsplit
+
+"""
+tapsplit - Split tap file into individual blocks
+"""
+
+DESCRIPTION = "tapsplit - TAP file splitter"
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     description=DESCRIPTION)
+    parser.add_argument('tapfile', help="input file")
+    parser.add_argument('--outdir', help="output directory", default=None)
+    args = parser.parse_args()
+    tapsplit.tapsplit(args)
