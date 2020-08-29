@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 INSTALL_REQUIRES = []
 setuptools.setup(
     name="zxtaputils",
-    version="0.0.1",
+    version="1.0.0",
     author="Wei-ju Wu",
     author_email="weiju.wu@gmail.com",
     description="TAP file related utilities for Sinclair ZX Spectrum",

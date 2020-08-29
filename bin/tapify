@@ -7,7 +7,9 @@ from zxtaputils import tapify
 tapify.py - Put the specified file into a TAP file
 """
 
-DESCRIPTION = "tapify - Place input file into a TAP file"
+DESCRIPTION = """tapify - Place a file into a ZX Spectrum TAP file
+Version 1.0.0 ©2020 Wei-ju Wu
+"""
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,

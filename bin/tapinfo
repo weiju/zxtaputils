@@ -7,7 +7,9 @@ from zxtaputils import tapinfo
 tapinfo - Print the block information of a TAP file for Sinclair ZX Spectrum.
 """
 
-DESCRIPTION = "tapinfo - TAP file viewer"
+DESCRIPTION = """tapinfo - ZX Spectrum TAP file viewer
+Version 1.0.0 ©2020 Wei-ju Wu
+"""
 
 
 if __name__ == '__main__':

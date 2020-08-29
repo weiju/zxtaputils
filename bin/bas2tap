@@ -4,10 +4,12 @@ import argparse
 from zxtaputils import bas2tokens
 
 """
-bas2tap - Tokenize a BASIC text file and store it in a TAP file
+bas2tap - Tokenize a BASIC text file and store it in a ZX Spectrum TAP file
 """
 
-DESCRIPTION = "bas2tap - Tokenize ZX Spectrum (Next) BASIC source file"
+DESCRIPTION = """bas2tap - Tokenize ZX Spectrum (Next) BASIC source file
+Version 1.0.0 ©2020 Wei-ju Wu
+"""
 
 
 if __name__ == '__main__':

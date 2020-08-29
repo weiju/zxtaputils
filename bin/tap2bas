@@ -10,7 +10,9 @@ from zxtaputils import tap2basic, bas2asc
 tap2bas - Extract BASIC source code from a TAP file block
 """
 
-DESCRIPTION = "tap2bas - Read BASIC code from TAP file block"
+DESCRIPTION = """tap2bas - Read BASIC code from ZX Spectrum TAP file block
+Version 1.0.0 ©2020 Wei-ju Wu
+"""
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
