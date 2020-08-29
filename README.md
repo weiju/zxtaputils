@@ -7,9 +7,9 @@ TAP files
 
 This suite consists of the tools:
 
+  - bas2tap
+  - tap2bas
   - tapextract
   - tapify
   - tapinfo
   - tapsplit
-  - zxbas2asc
-  - zxbas2tokens
